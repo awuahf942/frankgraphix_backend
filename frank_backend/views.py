@@ -13,7 +13,7 @@ class sendDetails(APIView):
 
         send_mail(
             subject,
-            f"{message} from {email}",
+            f"{message} from {email} \n Phone number is {phone}",
             "",
             ["awuahf942@gmail.com"],
             fail_silently=False,
