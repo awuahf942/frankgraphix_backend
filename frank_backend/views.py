@@ -4,9 +4,16 @@ from rest_framework.response import Response
 
 class sendDetails(APIView):
     def get(self, request, *args, **kwargs):
+        name= request.GET.get("name")
+        subject = request.GET.get("subject")
+        email = request.GET.get("email")
+        message = request.GET.get("message")
+        phone = request.GET.get("phone")
+
+
         send_mail(
-            "New Graphic Design Client Details",
-            "Here is the test message, so it works if you receive it, it may probably be in your spam",
+            subject,
+            f"{message} from {email}",
             "",
             ["awuahf942@gmail.com"],
             fail_silently=False,
